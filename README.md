@@ -9,4 +9,4 @@ O sistema usa os seguintes horários:
 
 Pra cada horário, o ponto é marcado num momento aleatório entre 15 minutos antes e 15 minutos depois.
 
-O login e a senha são parametrizados no app.config do serviço.
+O login e a senha são parametrizados no settings do projeto servico.
