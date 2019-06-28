@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoForponto.Console", "AutoForponto.Console\AutoForponto.Console.csproj", "{856AF267-6152-45C1-80AE-57D45BF014AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoForponto.Service", "AutoForponto.Service\AutoForponto.Service.csproj", "{A360C978-BFA4-4FBA-9E80-DC322201A397}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoForponto.Model", "AutoForponto.Model\AutoForponto.Model.csproj", "{5B776BE8-01DC-4376-A1B4-7AC245598D1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{856AF267-6152-45C1-80AE-57D45BF014AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{856AF267-6152-45C1-80AE-57D45BF014AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{856AF267-6152-45C1-80AE-57D45BF014AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{856AF267-6152-45C1-80AE-57D45BF014AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A360C978-BFA4-4FBA-9E80-DC322201A397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A360C978-BFA4-4FBA-9E80-DC322201A397}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A360C978-BFA4-4FBA-9E80-DC322201A397}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A360C978-BFA4-4FBA-9E80-DC322201A397}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B776BE8-01DC-4376-A1B4-7AC245598D1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B776BE8-01DC-4376-A1B4-7AC245598D1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B776BE8-01DC-4376-A1B4-7AC245598D1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B776BE8-01DC-4376-A1B4-7AC245598D1A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
