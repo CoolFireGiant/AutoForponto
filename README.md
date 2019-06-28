@@ -2,7 +2,7 @@
 
 O sistema usa os seguintes horários:
 
-9:00  - início da jornada de trabalho;\n
+9:00  - início da jornada de trabalho;
 12:00 - início do almoço;
 13:00 - fim do almoço;
 18:00 - fim da jornada de trabalho.
