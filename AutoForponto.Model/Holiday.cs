@@ -113,7 +113,7 @@ namespace AutoForponto.Model
             holidayList.Add(new DateTime(year, 11, 20)); //Dia da Consciência Negra
 
             #endregion
-            #region Feriados estaduais (RJ) fixos
+            #region Feriados municipais fixos (Rio de Janeiro)
 
             holidayList.Add(new DateTime(year, 01, 20)); //São Sebastião
             holidayList.Add(new DateTime(year, 03, 01)); //Aniversário da Cidade do Rio de Janeiro
