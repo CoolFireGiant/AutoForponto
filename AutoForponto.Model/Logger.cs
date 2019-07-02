@@ -1,81 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace AutoForponto.Model
 {
     public class Logger
     {
-        private string _login;
-
-        private FileInfo LogFile
+        public string Login { get; set; }
+        public string FilePath 
         {
-            get
-            {
-                //var dirPath = string.Format(@"C:/Users/{0}/Documents/AutoForponto Log/", Environment.UserName);
-                //if (!Directory.Exists(dirPath))
-                //    Directory.CreateDirectory(dirPath);
-                var dirPath = string.Empty;
-                var filePath = string.Format(dirPath + @"AutoForponto Log - {0}.csv", DateTime.Today.ToString("yyyyMM"));
-                return new FileInfo(filePath);
-            }
+            get { return string.Format(@"AutoForponto Log - {0}.csv", DateTime.Today.ToString("yyyyMM")); } 
         }
 
-        public Logger()
+        public Logger(string login = "SERVICE")
         {
-            _login = "SERVICE";
+            Login = login;
             LogStartOfDay();
-        }
-
-        public Logger(string login)
-        {
-            _login = login;
         }
 
         public void Log(string text)
         {
-            using (var logWriter = LogFile.AppendText())
-            {
-                logWriter.AutoFlush = true;
-
-                text = string.Join(";", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss.fff"), _login, text);
-
-                logWriter.Write(Environment.NewLine + text);
-                logWriter.Close();
-            }
+            File.AppendAllText(FilePath, Environment.NewLine + string.Join(";", DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss.fff"), Login, text));
         }
 
         private void LogStartOfDay()
         {
             string line = string.Empty;
-            var vazio = true;
 
-            if (LogFile.Exists)
+            if (File.Exists(FilePath))
             {
-                using (var reader = LogFile.OpenText())
+                var lines = File.ReadLines(FilePath);
+                if (lines.Count() > 0)
                 {
-                    while (!reader.EndOfStream)
-                    {
-                        line = reader.ReadLine();
-                        vazio = false;
-                    }
-                    reader.Close();
+                    line = lines.Last();
                 }
             }
 
-            if (vazio || (
+            if (string.IsNullOrWhiteSpace(line) || (
                 line[0] != '=' &&
-                !string.IsNullOrWhiteSpace(line) &&
-                DateTime.Parse(line.Split(' ')[0]) < DateTime.Today))
+                DateTime.Parse(line.Split(' ')[0]) != DateTime.Today))
             {
-                using (var logWriter = LogFile.AppendText())
-                {
-                    logWriter.AutoFlush = true;
-                    logWriter.Write((vazio ? "" : Environment.NewLine) + "========== " + DateTime.Today.ToLongDateString() + " ==========");
-                    logWriter.Close();
-                }
+                File.AppendAllText(FilePath, string.Format("{0}========== {1} ==========", Environment.NewLine, DateTime.Today.ToLongDateString()));
             }
         }
     }
